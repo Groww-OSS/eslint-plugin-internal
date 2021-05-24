@@ -18,13 +18,14 @@ ruleTester.run('two-line-between-class-members', rule, {
 
   valid: [
     {
-      code: 'class C{\na(){}\n\nb(){}}'
+      code: 'class C{\na(){}\n\n\nb(){}\n}'
     }
   ],
 
   invalid: [
     {
-      code: 'class C{\na(){}\nb(){}}',
+      code: 'class C{\na(){}\n\nb(){}\n}',
+      output: 'class C{\na(){}\n\n\nb(){}\n}',
       errors,
     },
   ],
