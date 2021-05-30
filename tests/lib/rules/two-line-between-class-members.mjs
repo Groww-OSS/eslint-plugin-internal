@@ -1,4 +1,5 @@
-import { createRequire } from "module";
+import { createRequire } from 'module';
+
 const require = createRequire(import.meta.url);
 
 const rule = require('../../../lib/rules/two-line-between-class-members');
