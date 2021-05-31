@@ -2,7 +2,7 @@ import { createRequire } from 'module';
 
 const require = createRequire(import.meta.url);
 
-const rule = require('../../../lib/rules/space-inside-fn');
+const rule = require('../../../lib/rules/two-line-above-function');
 const typescriptEslintParser = require.resolve("@typescript-eslint/parser")
 const RuleTester = require('eslint').RuleTester;
 
@@ -12,14 +12,17 @@ const ruleTester = new RuleTester({
 }
 );
 
-const errors = [ { message: 'Expected two lines above nested function' } ];
+const errors = [{ message: 'Expected two line above function' }];
 
 
-ruleTester.run('two-line-inside-fn', rule, {
+ruleTester.run('two-line-above-function', rule, {
 
   valid: [
     {
       code: 'function C(){\nfunction a(){};\n\n\nfunction b(){};\n};'
+    },
+    {
+      code: 'function C(){\nfunction a(){};\n\n\nfunction b(){};\n};\n\n\nfunction foo(){};'
     }
   ],
 
