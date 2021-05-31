@@ -7,7 +7,7 @@ ESLint Plugin with customized rules as per requirement and preferences of devs i
 You'll first need to install [ESLint](http://eslint.org):
 
 ```
-$ npm i eslint --save-dev
+$ npm i eslint @typescript-eslint/parser --save-dev 
 ```
 
 Next, install `eslint-plugin-internal`:
@@ -24,7 +24,7 @@ Add `internal` to the plugins section of your `.eslintrc` configuration file. Yo
 ```json
 {
     "plugins": [
-        "internal"
+        "@groww-tech/eslint-plugin-internal"
     ]
 }
 ```
@@ -33,18 +33,35 @@ Add `internal` to the plugins section of your `.eslintrc` configuration file. Yo
 Then configure the rules you want to use under the rules section.
 
 ```json
-{
+{  
+    "parser": "@typescript-eslint/parser",
     "rules": {
-        "internal/rule-name": 2
+    "@groww-tech/internal/two-line-above-function":"error",
     }
 }
 ```
 
 ## Supported Rules
 
-* Fill in provided rules here
+```
+avoid-negation-unary-if-else  
+```
+```
+padded-blocks-bottom-if-else-try-catch 
+```
 
+```
+prefer-type-alias
+```
 
+```
+two-line-above-function
+```
 
+```
+two-line-between-class-members
+```
 
+<br/>
 
+*This plugin is for use in Groww projects. Use at your own risk.*
