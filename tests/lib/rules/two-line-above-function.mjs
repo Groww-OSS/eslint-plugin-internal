@@ -12,7 +12,7 @@ const ruleTester = new RuleTester({
 }
 );
 
-const errors = [{ message: 'Expected two line above function' }];
+const errors = [{ message: 'Expected two line above' }];
 
 
 ruleTester.run('two-line-above-function', rule, {
@@ -23,6 +23,10 @@ ruleTester.run('two-line-above-function', rule, {
     },
     {
       code: 'function C(){\nfunction a(){};\n\n\nfunction b(){};\n};\n\n\nfunction foo(){};'
+    },
+    {
+
+      code: 'function C(){\nfunction a(){};\n\n\nfunction b(){};\n};\n\n\ntype pay={a:string;};'
     }
   ],
 
@@ -30,6 +34,11 @@ ruleTester.run('two-line-above-function', rule, {
     {
       code: 'function C(){\nfunction a(){}\n\nfunction b(){}\n}',
       output: 'function C(){\nfunction a(){}\n\n\nfunction b(){}\n}',
+      errors,
+    },
+    {
+      code: 'function C(){\nfunction a(){}\n\ntype pay={a:string;}\n}',
+      output: 'function C(){\nfunction a(){}\n\n\ntype pay={a:string;}\n}',
       errors,
     },
   ],
