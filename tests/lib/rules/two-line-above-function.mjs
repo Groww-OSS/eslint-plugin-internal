@@ -22,7 +22,7 @@ ruleTester.run('two-line-above-function', rule, {
       code: 'function C(){\nfunction a(){};\n\n\nfunction b(){};\n};'
     },
     {
-      code: 'function C(){\nfunction a(){};\n\n\nfunction b(){};\n};\n\n\nfunction foo(){};'
+      code: 'const a=2;\n\n\nfunction C(){\nfunction a(){};\n\n\nfunction b(){};\n};\n\n\nfunction foo(){};'
     },
     {
 
