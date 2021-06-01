@@ -1,4 +1,5 @@
 # eslint-plugin-internal
+[![Node.js CI](https://github.com/Groww/eslint-plugin-internal/actions/workflows/node.js.yml/badge.svg)](https://github.com/Groww/eslint-plugin-internal/actions/workflows/node.js.yml)
 
 ESLint Plugin with customized rules as per requirement and preferences of devs in Groww.
 
