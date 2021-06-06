@@ -37,7 +37,12 @@ ruleTester.run('two-line-above-function', rule, {
       errors,
     },
     {
-      code: 'function C(){\nfunction a(){}\n\ntype pay={a:string;}\n}',
+      code: 'const c=()=>{\nfunction a(){}\nconst b=()=>{const x=1}\n}',
+      output: 'const c=()=>{\nfunction a(){}\n\n\nconst b=()=>{const x=1}\n}',
+      errors,
+    },
+    {
+      code: 'function C(){\nfunction a(){}\ntype pay={a:string;}\n}',
       output: 'function C(){\nfunction a(){}\n\n\ntype pay={a:string;}\n}',
       errors,
     },
