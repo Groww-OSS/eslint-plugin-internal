@@ -1,3 +1,4 @@
+# !!! The repo has been migrated to [webster](https://github.com/Groww/webster)
 # eslint-plugin-internal
 [![Node.js CI](https://github.com/Groww/eslint-plugin-internal/actions/workflows/node.js.yml/badge.svg)](https://github.com/Groww/eslint-plugin-internal/actions/workflows/node.js.yml)
 
